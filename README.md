@@ -5,7 +5,7 @@
 
 ## Overview
 
-This terraform module provisions an Azure App Service compute plan
+This Terraform module provisions an Azure App Service compute plan.
 
 ## Pre-Commit hooks
 
