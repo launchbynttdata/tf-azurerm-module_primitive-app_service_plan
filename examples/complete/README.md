@@ -1,11 +1,25 @@
 # complete
 
+## Usage
+
+```hcl
+module "app_service_plan" {
+  source = "../.."
+
+  name                = "example-app-service-plan"
+  resource_group_name = "example-resource-group"
+  location            = "eastus"
+  os_type             = "Linux"
+  sku_name             = "Y1"
+}
+```
+
 <!-- BEGIN_TF_DOCS -->
 ## Requirements
 
 | Name | Version |
 |------|---------|
-| <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | ~> 1.0 |
+| <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | ~> 1.2 |
 | <a name="requirement_azurerm"></a> [azurerm](#requirement\_azurerm) | ~>3.116 |
 
 ## Modules
