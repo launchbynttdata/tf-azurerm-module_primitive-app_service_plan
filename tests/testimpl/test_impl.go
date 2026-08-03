@@ -16,6 +16,14 @@ import (
 )
 
 func TestAppServicePlan(t *testing.T, ctx types.TestContext) {
+	testAppServicePlan(t, ctx)
+}
+
+func TestComposableAppServicePlan(t *testing.T, ctx types.TestContext) {
+	testAppServicePlan(t, ctx)
+}
+
+func testAppServicePlan(t *testing.T, ctx types.TestContext) {
 	subscriptionId := os.Getenv("ARM_SUBSCRIPTION_ID")
 	if len(subscriptionId) == 0 {
 		t.Fatal("ARM_SUBSCRIPTION_ID environment variable is not set")
@@ -23,7 +31,7 @@ func TestAppServicePlan(t *testing.T, ctx types.TestContext) {
 
 	credential, err := azidentity.NewDefaultAzureCredential(nil)
 	if err != nil {
-		t.Fatalf("Unable to get credentials: %e\n", err)
+		t.Fatalf("Unable to get credentials: %v\n", err)
 	}
 
 	options := arm.ClientOptions{
