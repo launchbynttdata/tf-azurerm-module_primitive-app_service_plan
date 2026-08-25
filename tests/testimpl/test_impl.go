@@ -46,8 +46,8 @@ func testAppServicePlan(t *testing.T, ctx types.TestContext) {
 	}
 
 	t.Run("doesAppServicePlanExist", func(t *testing.T) {
-		appServicePlanName := terraform.Output(t, ctx.TerratestTerraformOptions(), "name")
-		resourceGroupName := terraform.Output(t, ctx.TerratestTerraformOptions(), "resource_group_name")
+		appServicePlanName := terraform.OutputContext(t, context.Background(), ctx.TerratestTerraformOptions(), "name")
+		resourceGroupName := terraform.OutputContext(t, context.Background(), ctx.TerratestTerraformOptions(), "resource_group_name")
 
 		appServicePlan, err := appServicePlanClient.Get(context.Background(), resourceGroupName, appServicePlanName, nil)
 		if err != nil {
